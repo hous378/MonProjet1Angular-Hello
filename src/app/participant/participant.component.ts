@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Participant } from '../domain/participant';
+import { ParticipantsService } from '../services/participants.service';
 
 @Component({
   selector: 'app-participant',
@@ -8,15 +9,10 @@ import { Participant } from '../domain/participant';
 })
 export class ParticipantComponent implements OnInit {
   participants: Participant[];
-  constructor() { }
+  constructor(private _service: ParticipantsService) { } // constructor injection
 
   ngOnInit() {
-  this.participants = [
-  {'numero' : 'P1000' , 'nom' : 'Sami', 'age': 25},
-  {'numero' : 'P1000' , 'nom' : 'Zs', 'age' : 25},
-  {'numero' : 'P1000' , 'nom' : 'HB' , 'age' : 25},
-  {'numero': 'P1000' , 'nom' : 'Mah' , 'age' : 25 }
-  ];
-
+    this.participants = this._service.getAll();
   }
+
 }
