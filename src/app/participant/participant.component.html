@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="jumbotron">
+      <h1>Learning ANGULAR 6</h1>
+
+  </div>
+
+<div class="card ">
+  <div class="card-header bg-primary">
+    <h2>Liste des participants</h2>
+  </div>
+  <div class="card-body">
+
+    <table class="table table-bordered table-striped">
+
+      <thead>
+
+        <tr *ngFor ='let p of participants'>
+          <th>{{p.numero}}</th>
+          <th>{{p.nom}}</th>
+          <th>{{p.age}}</th>
+
+
+        </tr>
+      </thead>
+
+    </table>
+      <!-- <ul>
+          <li *ngFor ='let p of participants'>
+          {{p.numero}}
+          {{p.age}}
+          </li>
+
+          </ul> -->
+  </div>
+
+</div>
+
+
